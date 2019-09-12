@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class LogAspect {
-    @Around("execution( * com.example.SpringSample.login.controller.LoginController.getLogin(..))")
+    @Around("bean(*Controller)")
     public Object startLog(ProceedingJoinPoint jp) throws Throwable {
         System.out.println("メソッド開始： " + jp.getSignature());
         try {
