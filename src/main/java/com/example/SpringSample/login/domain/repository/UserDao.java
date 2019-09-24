@@ -1,4 +1,4 @@
-package com.example.SpringSample.login.domain.model.repository;
+package com.example.SpringSample.login.domain.repository;
 
 import com.example.SpringSample.login.domain.model.User;
 import org.springframework.dao.DataAccessException;
