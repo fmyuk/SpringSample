@@ -3,6 +3,7 @@ package com.example.SpringSample.login.domain.service;
 import com.example.SpringSample.login.domain.model.User;
 import com.example.SpringSample.login.domain.repository.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @Service
 public class UserService {
     @Autowired
+    @Qualifier("UserDaoJdbcImpl4")
     UserDao dao;
 
     public boolean insert(User user) {
