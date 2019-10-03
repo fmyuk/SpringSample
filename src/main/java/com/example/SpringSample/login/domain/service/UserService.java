@@ -19,7 +19,7 @@ import java.util.List;
 @Service
 public class UserService {
     @Autowired
-    @Qualifier("UserDaoNamedJdbcImpl")
+    @Qualifier("UserDaoJdbcImpl")
     UserDao dao;
 
     public boolean insert(User user) {

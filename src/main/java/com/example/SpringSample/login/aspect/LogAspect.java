@@ -14,7 +14,6 @@ public class LogAspect {
         System.out.println("メソッド開始： " + jp.getSignature());
 
         try {
-            // ポイント２：メソッド実行
             Object result = jp.proceed();
 
             System.out.println("メソッド終了： " + jp.getSignature());
@@ -28,9 +27,6 @@ public class LogAspect {
         }
     }
 
-    /**
-     * Daoクラスのログ出力用アスペクト.
-     */
     @Around("execution(* *..*.*UserDao*.*(..))")
     public Object daoLog(ProceedingJoinPoint jp) throws Throwable {
 

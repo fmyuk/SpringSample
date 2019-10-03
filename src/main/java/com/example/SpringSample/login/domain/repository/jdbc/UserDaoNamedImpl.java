@@ -38,7 +38,7 @@ public class UserDaoNamedImpl implements UserDao {
                 + " :password,"
                 + " :userName,"
                 + " :birthday,"
-                + " :age"
+                + " :age,"
                 + " :marriage,"
                 + " :role)";
         SqlParameterSource params = new MapSqlParameterSource()
@@ -47,6 +47,7 @@ public class UserDaoNamedImpl implements UserDao {
                 .addValue("userName", user.getUserName())
                 .addValue("birthday", user.getBirthday())
                 .addValue("age", user.getAge())
+                .addValue("marriage", user.isMarriage())
                 .addValue("role", user.getRole());
         return jdbc.update(sql, params);
     }
