@@ -74,15 +74,15 @@ public class UserDaoNamedImpl implements UserDao {
         SqlParameterSource params = new MapSqlParameterSource();
         List<Map<String, Object>> getList = jdbc.queryForList(sql, params);
         List<User> userList = new ArrayList<>();
-        for(Map<String,Object> map: getList) {
+        for (Map<String, Object> map : getList) {
             User user = new User();
-            user.setUserId((String)map.get("user_id"));
-            user.setPassword((String)map.get("password"));
-            user.setUserName((String)map.get("user_name"));
-            user.setBirthday((Date)map.get("birthday"));
-            user.setAge((Integer)map.get("age"));
-            user.setMarriage((Boolean)map.get("marriage"));
-            user.setRole((String)map.get("role"));
+            user.setUserId((String) map.get("user_id"));
+            user.setPassword((String) map.get("password"));
+            user.setUserName((String) map.get("user_name"));
+            user.setBirthday((Date) map.get("birthday"));
+            user.setAge((Integer) map.get("age"));
+            user.setMarriage((Boolean) map.get("marriage"));
+            user.setRole((String) map.get("role"));
             userList.add(user);
         }
         return userList;

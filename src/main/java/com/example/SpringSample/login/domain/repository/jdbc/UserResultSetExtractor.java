@@ -16,7 +16,7 @@ public class UserResultSetExtractor implements ResultSetExtractor<List<User>> {
     public List<User> extractData(ResultSet rs) throws SQLException, DataAccessException {
         List<User> userList = new ArrayList<>();
 
-        while(rs.next()) {
+        while (rs.next()) {
             User user = new User();
             user.setUserId(rs.getString("user_id"));
             user.setPassword(rs.getString("password"));
@@ -27,7 +27,7 @@ public class UserResultSetExtractor implements ResultSetExtractor<List<User>> {
             user.setRole(rs.getString("role"));
             userList.add(user);
         }
-        if(userList.size() == 0) {
+        if (userList.size() == 0) {
             throw new EmptyResultDataAccessException(1);
         }
 

@@ -89,7 +89,7 @@ public class HomeController {
             } else {
                 model.addAttribute("result", "更新失敗");
             }
-        } catch(DataAccessException e) {
+        } catch (DataAccessException e) {
             model.addAttribute("result", "更新失敗(トランザクションテスト)");
         }
         return getUserList(model);
@@ -100,7 +100,7 @@ public class HomeController {
         System.out.println("削除ボタンの処理");
         boolean result = userService.deleteOne(form.getUserId());
 
-        if(result) {
+        if (result) {
             model.addAttribute("result", "削除成功");
         } else {
             model.addAttribute("result", "削除失敗");
@@ -119,7 +119,7 @@ public class HomeController {
         byte[] bytes = null;
         try {
             bytes = userService.getFile("sample.csv");
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         HttpHeaders header = new HttpHeaders();

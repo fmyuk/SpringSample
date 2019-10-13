@@ -78,7 +78,7 @@ public class SignupController {
         user.setRole("ROLE_GENERAL");
 
         boolean result = userService.insert(user);
-        if(result == true) {
+        if (result == true) {
             System.out.println("insert success");
         } else {
             System.out.println("insert false");
