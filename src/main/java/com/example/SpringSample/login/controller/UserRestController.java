@@ -3,6 +3,7 @@ package com.example.SpringSample.login.controller;
 import com.example.SpringSample.login.domain.model.User;
 import com.example.SpringSample.login.domain.service.RestService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,7 @@ import java.util.List;
 @RestController
 public class UserRestController {
     @Autowired
+    @Qualifier("RestServiceMybatisImpl")
     RestService service;
 
     @GetMapping("/rest/get")
@@ -33,7 +35,7 @@ public class UserRestController {
         boolean result = service.insert(user);
         String str = "";
 
-        if(result == true) {
+        if (result == true) {
             str = "{\"result\":\"ok\"}";
         } else {
             str = "{\"result\":\"error\"}";
@@ -47,7 +49,7 @@ public class UserRestController {
         boolean result = service.update(user);
         String str = "";
 
-        if(result == true) {
+        if (result == true) {
             str = "{\"result\":\"ok\"}";
         } else {
             str = "{\"result\":\"error\"}";
@@ -61,7 +63,7 @@ public class UserRestController {
         boolean result = service.delete(userId);
         String str = "";
 
-        if(result == true) {
+        if (result == true) {
             str = "{\"result\":\"ok\"}";
         } else {
             str = "{\"result\":\"error\"}";
